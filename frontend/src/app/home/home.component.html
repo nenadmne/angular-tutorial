@@ -1,11 +1,21 @@
 <!-- Under the for loop that loops trough products, we define that product prop in child element is equal to item from loop -->
 <div class="column gap-1">
+  <!-- Add Product Button -->
+  <button
+    type="button"
+    pButton
+    icon="pi pi-plus"
+    (click)="toggleAddPopup()"
+    label="Add Product"
+    class="add-product-btn"
+  ></button>
   <!-- product list -->
   <div class="row wrap gap-1 space-between">
     <app-product
       *ngFor="let item of products"
       [product]="item"
-      (productOutput)="onProductOutput($event)"
+      (edit)="toggleEditPopup($event)"
+      (delete)="toggleDeletePopup($event)"
     ></app-product>
   </div>
 
@@ -17,3 +27,18 @@
     (onPageChange)="onPageChange($event)"
   ></p-paginator>
 </div>
+
+<!-- Edit Product -->
+<app-edit-popup
+  [product]="selectedProduct"
+  [(display)]="displayEditPopup"
+  (confirm)="onConfirmEdit($event)"
+  header="Edit Product"
+></app-edit-popup>
+
+<!-- Add Product -->
+<app-edit-popup
+  [(display)]="displayAddPopup"
+  (confirm)="onConfirmAdd($event)"
+  header="Add Product"
+></app-edit-popup>

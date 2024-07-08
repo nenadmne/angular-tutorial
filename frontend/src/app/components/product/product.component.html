@@ -10,4 +10,23 @@
     [readonly]="true"
     iconCancelClass="hidden"
   />
+
+  <!-- Action buttons -->
+  <div class="row gap-05">
+    <button
+      type="button"
+      pButton
+      icon="pi pi-pencil"
+      label="Edit"
+      (click)="editProduct()"
+    ></button>
+    <button
+      type="button"
+      pButton
+      icon="pi pi-trash"
+      label="Delete"
+      class="p-button-danger"
+      (click)="deleteProduct()"
+    ></button>
+  </div>
 </div>
