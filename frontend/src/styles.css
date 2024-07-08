@@ -97,3 +97,13 @@ app-root {
   pointer-events: none;
   opacity: 0.5;
 }
+
+/* Overrides */
+.p-rating-cancel-item {
+  display: none;
+}
+
+input.ng-invalid {
+  border: 1px solid red;
+}
+/* Overrides */

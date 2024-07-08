@@ -1,5 +1,5 @@
 <!-- Under the for loop that loops trough products, we define that product prop in child element is equal to item from loop -->
-<div class="column">
+<div class="column gap-1">
   <div class="row wrap gap-1 space-between">
     <app-product
       *ngFor="let item of products"
@@ -7,4 +7,11 @@
       (productOutput)="onProductOutput($event)"
     ></app-product>
   </div>
+
+  <p-paginator
+    [rows]="rows"
+    [totalRecords]="totalRecords"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    (onPageChange)="onPageChange($event)"
+  ></p-paginator>
 </div>
