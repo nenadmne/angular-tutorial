@@ -1,1 +1,6 @@
-<p>Hello world</p>
+<!-- Under the for loop that loops trough products, we define that product prop in child element is equal to item from loop -->
+<div class="column">
+  <div class="row wrap gap-1 space-between">
+    <app-product *ngFor="let item of products" [product]="item"></app-product>
+  </div>
+</div>

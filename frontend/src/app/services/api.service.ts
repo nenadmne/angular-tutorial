@@ -6,6 +6,8 @@ import { Options } from '../../types';
 @Injectable({
   providedIn: 'root',
 })
+
+// Private means that it can only be used inside ApiService class 
 export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
