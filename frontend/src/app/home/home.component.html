@@ -1,5 +1,6 @@
 <!-- Under the for loop that loops trough products, we define that product prop in child element is equal to item from loop -->
 <div class="column gap-1">
+  <!-- product list -->
   <div class="row wrap gap-1 space-between">
     <app-product
       *ngFor="let item of products"
@@ -8,6 +9,7 @@
     ></app-product>
   </div>
 
+  <!-- Pagination -->
   <p-paginator
     [rows]="rows"
     [totalRecords]="totalRecords"

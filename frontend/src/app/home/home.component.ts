@@ -45,4 +45,31 @@ export class HomeComponent {
   onPageChange(event: any) {
     this.fetchProducts(event.page, event.rows);
   }
+
+  editProduct(product: Product, id: number) {
+    this.productService
+      .editProduct(`http://localhost:3000/clothes/${id}`, product)
+      .subscribe({
+        next: (data) => console.log(data),
+        error: (error) => console.log(error),
+      });
+  }
+
+  addProduct(product: Product) {
+    this.productService
+      .addProduct(`http://localhost:3000/clothes`, product)
+      .subscribe({
+        next: (data) => console.log(data),
+        error: (error) => console.log(error),
+      });
+  }
+
+  deleteProduct(id: number) {
+    this.productService
+      .deleteProduct(`http://localhost:3000/clothes/${id}`)
+      .subscribe({
+        next: (data) => console.log(data),
+        error: (error) => console.log(error),
+      });
+  }
 }
