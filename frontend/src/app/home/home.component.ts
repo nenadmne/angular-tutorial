@@ -29,4 +29,8 @@ export class HomeComponent {
         this.products = products.items;
       });
   }
+
+  onProductOutput(product: Product) {
+    console.log(product, 'Output');
+  }
 }
